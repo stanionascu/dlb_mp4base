@@ -1654,26 +1654,26 @@ void decode_sei_nalu( hevc_decode_t *p_context, hevc_nalu_t *p_nalu )
                     uint16_t temp0 = 0;
                     uint32_t temp1 = 0;
                      temp0 = (uint16_t)bitstream_read( &p_nalu->bitstream, 16 );
-                      msglog(NULL, MSGLOG_INFO, "Mastering Green primary  x: %f\n", temp0*0.00002);
+                      msglog(NULL, MSGLOG_DEBUG, "Mastering Green primary  x: %f\n", temp0*0.00002);
                      temp0 = (uint16_t)bitstream_read( &p_nalu->bitstream, 16 );
-                      msglog(NULL, MSGLOG_INFO, "Mastering Green primary  y: %f\n", temp0*0.00002);
+                      msglog(NULL, MSGLOG_DEBUG, "Mastering Green primary  y: %f\n", temp0*0.00002);
                      temp0 = (uint16_t)bitstream_read( &p_nalu->bitstream, 16 );
-                      msglog(NULL, MSGLOG_INFO, "Mastering Blue primary   x: %f\n", temp0*0.00002);
+                      msglog(NULL, MSGLOG_DEBUG, "Mastering Blue primary   x: %f\n", temp0*0.00002);
                      temp0 = (uint16_t)bitstream_read( &p_nalu->bitstream, 16 );
-                      msglog(NULL, MSGLOG_INFO, "Mastering Blue primary   y: %f\n", temp0*0.00002);
+                      msglog(NULL, MSGLOG_DEBUG, "Mastering Blue primary   y: %f\n", temp0*0.00002);
                      temp0 = (uint16_t)bitstream_read( &p_nalu->bitstream, 16 );
-                      msglog(NULL, MSGLOG_INFO, "Mastering Red primary    x: %f\n", temp0*0.00002);
+                      msglog(NULL, MSGLOG_DEBUG, "Mastering Red primary    x: %f\n", temp0*0.00002);
                      temp0 = (uint16_t)bitstream_read( &p_nalu->bitstream, 16 );
-                      msglog(NULL, MSGLOG_INFO, "Mastering Red primary    y: %f\n", temp0*0.00002);
+                      msglog(NULL, MSGLOG_DEBUG, "Mastering Red primary    y: %f\n", temp0*0.00002);
                      temp0 = (uint16_t)bitstream_read( &p_nalu->bitstream, 16 );
-                      msglog(NULL, MSGLOG_INFO, "Mastering White primary  x: %f\n", temp0*0.00002);
+                      msglog(NULL, MSGLOG_DEBUG, "Mastering White primary  x: %f\n", temp0*0.00002);
                      temp0 = (uint16_t)bitstream_read( &p_nalu->bitstream, 16 );
-                      msglog(NULL, MSGLOG_INFO, "Mastering White primary  y: %f\n", temp0*0.00002);
+                      msglog(NULL, MSGLOG_DEBUG, "Mastering White primary  y: %f\n", temp0*0.00002);
 
                      temp1 = bitstream_read( &p_nalu->bitstream, 32 );
-                      msglog(NULL, MSGLOG_INFO, "Mastering Luminance Man: %f\n", temp1*0.0001);
+                      msglog(NULL, MSGLOG_DEBUG, "Mastering Luminance Man: %f\n", temp1*0.0001);
                      temp1 = bitstream_read( &p_nalu->bitstream, 32 );
-                      msglog(NULL, MSGLOG_INFO, "Mastering Luminance Min: %f\n", temp1*0.0001);
+                      msglog(NULL, MSGLOG_DEBUG, "Mastering Luminance Min: %f\n", temp1*0.0001);
                 }
             default:
                 break;
