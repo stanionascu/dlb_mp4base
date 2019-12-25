@@ -56,6 +56,8 @@ mp4muxer_usage(void)
     msglog(NULL, MSGLOG_CRIT,
                 " --help,-h                          = Shows the help information.\n"
                 " --version,-v                       = Shows the version information.\n"
+                " --log-level                        = Sets the log level, supported levels are:\n"
+                "                                      'debug', 'info', 'warning', 'error', 'fatal', 'panic', 'quiet'. \n"
                 " --input-file,-i <file.ext> [--media-lang <language>] \n" 
                 "                            [--media-timescale <timescale>] \n"
                 "                            [--input-video-frame-rate <framerate>]\n"
@@ -66,8 +68,8 @@ mp4muxer_usage(void)
                 " --overwrite                        = Overwrites the existing output .mp4 file if there is one.\n"
                 " --mpeg4-timescale <arg>            = Overrides the timescale of the entire presentation.\n"
                 " --mpeg4-brand <arg>                = Specifies the ISO base media file format brand in the format.\n"
-                " --mpeg4-comp-brand <arg>           = Specifies the ISO base media file format compatible brand(s), \n" 
-				"                                      in the format of a comma separated list, for example mp42,iso6,isom,msdh,dby1. \n"
+                " --mpeg4-comp-brand <arg>           = Specifies the ISO base media file format comlopatible brand(s), \n"
+                "                                      in the format of a comma separated list, for example mp42,iso6,isom,msdh,dby1. \n"
                 " --output-format <arg>              = Sets the output file format or the specification to which the\n"
                 "                                      output file must conform. Valid values include 'mp4' and 'frag-mp4'. \n" 
                 "                                      'mp4' is the default value.\n"
@@ -312,6 +314,10 @@ parse_cli(ema_mp4_ctrl_handle_t handle, int32_t argc, int8_t **argv)
         {
             OSAL_SSCANF(*argv, "%u", &ua);
             ret = ema_mp4_mux_set_dv_profile(handle, (int)ua);
+        }
+        else if (!OSAL_STRCASECMP(opt, "--log-level"))
+        {
+            ret = ema_mp4_mux_set_db_level(handle, *argv);
         }
         else
         {
